@@ -6,6 +6,7 @@ import path from 'path';
 
 import indexRouter from '../routes/index.js';
 
+import notFoundController from '../api/controllers/notFound.js';
 import errorController from '../api/controllers/errors.js';
 
 const expressLoader = (app) => {
@@ -18,6 +19,7 @@ const expressLoader = (app) => {
 
     app.use('/', indexRouter);
 
+    app.use(notFoundController);
     app.use(errorController);
 };
 
