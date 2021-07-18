@@ -5,6 +5,7 @@ import cors from 'cors';
 import path from 'path';
 
 import indexRouter from '../routes/index.js';
+import routes from '../api/index.js';
 
 import notFoundController from '../api/controllers/notFound.js';
 import errorController from '../api/controllers/errors.js';
@@ -18,6 +19,7 @@ const expressLoader = (app) => {
     app.use(express.static(path.join(`${process.cwd()}/src/`, 'public')));
 
     app.use('/', indexRouter);
+    app.use('/api', routes());
 
     app.use(notFoundController);
     app.use(errorController);
