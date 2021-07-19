@@ -7,7 +7,8 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "load-dataset": "DEBUG=* node scripts/loadDataset.js",
-    "top100": "DEBUG=* node scripts/countTop100.js"
+    "top100": "DEBUG=* node scripts/countTop100.js",
+    "test": "mocha --timeout 10000 --exit"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -24,8 +25,11 @@
     "nodemon": "^2.0.12"
   },
   "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
     "eslint": "^7.22.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.22.1",
+    "mocha": "^8.3.2"
   }
 }

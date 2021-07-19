@@ -21,6 +21,10 @@ Run backend
 ```
 npm start
 ```
+Run Tests
+```
+npm run test
+```
 
 \
 &nbsp;
