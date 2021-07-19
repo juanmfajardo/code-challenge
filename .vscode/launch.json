@@ -14,9 +14,13 @@
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": "npm",
             "runtimeArgs": [
-                "run-script", "start"
+                "run-script", "dev"
             ],
-            "outputCapture": "std"
+            "outputCapture": "std",
+            "resolveSourceMapLocations": [
+                "${workspaceFolder}/**",
+                "!**/node_modules/**"
+            ],
         },
         {
             "type": "node",

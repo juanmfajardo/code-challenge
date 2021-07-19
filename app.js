@@ -2,6 +2,7 @@ import express from 'express';
 
 import config from './src/config/index.js';
 import loaders from './src/loaders/index.js';
+import { exit } from './src/utils/index.js';
 
 const app = express();
 
@@ -12,9 +13,8 @@ const startServer = async () => {
         console.log(`Backend running on port ${config.PORT} 🚀`);
     });
 
-    app.on('error', (err) => {
-        console.log(err);
-        process.exit(1);
+    app.on('error', (error) => {
+        exit(error);
     });
 };
 

@@ -1,7 +1,5 @@
-import createError from 'http-errors';
+import response from './responses.js';
 
-const handleNotFound = (req, res, next) => {
-    next(createError(404));
-};
+const handleNotFound = (req, res) => response.notFound(res, 'Not Found');
 
 export default handleNotFound;
