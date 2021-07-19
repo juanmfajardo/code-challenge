@@ -12,6 +12,7 @@
     },
     "rules": {
         "indent": ["error", 4],
-        "import/extensions": 0
+        "import/extensions": 0,
+        "no-console": 0
     }
 }
