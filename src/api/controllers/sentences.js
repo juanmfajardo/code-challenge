@@ -7,8 +7,7 @@ import {
 export const addSentence = async (req, res) => {
     const { text, cats } = req.body;
 
-    const stringCats = Object.keys(cats).filter((key) => cats[key]);
-    const sentence = await createSentence({ text, cats: stringCats });
+    const sentence = await createSentence({ text, cats });
 
     return response.success(res, 'Sentence successfully added', { data: { id: sentence.id } });
 };
@@ -54,10 +53,9 @@ export const updateSentence = async (req, res) => {
     const { text, cats } = req.body;
     const { id } = req.params;
 
-    const stringCats = cats && Object.keys(cats).filter((key) => cats[key]);
-    const sentence = await modifySentence({ id, text, cats: stringCats });
+    const sentence = await modifySentence({ id, text, cats });
     if (!sentence) {
         return response.notFound(res, 'Sentence not found');
     }
-    return response.success(res, 'Sentence successfully updated', { data: { text, cats: stringCats } });
+    return response.success(res, 'Sentence successfully updated', { data: { text, cats } });
 };
