@@ -6,186 +6,188 @@
 	},
 	"item": [
 		{
+			"name": "API",
+			"item": [
+				{
+					"name": "Add Sentence",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"Dies ist ein Test.\",\n    \"cats\": [\"soft\"]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/sentences",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"sentences"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sentences",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/sentences?offset=0&limit=100",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"sentences"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "asc",
+									"description": "Optional",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "Required"
+								},
+								{
+									"key": "limit",
+									"value": "100",
+									"description": "Required"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sentence",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/sentences/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"sentences",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "076dBfNIxECtfyiiMgJQ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Sentence",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"Dies ist ein Test\",\n    \"cats\": [\"soft\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/sentences/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"sentences",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "076dBfNIxECtfyiiMgJQ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Sentence",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/sentences/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"sentences",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "076dBfNIxECtfyiiMgJQ"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Translate",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"text\": \"const sind offen, kommunikationsstark und teamorientiert.\"\n}\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/translations",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"translations"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add Sentence",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"text\": \"Dies ist ein Test.\",\n    \"cats\": [\"soft\"]\n}\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/sentences",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"sentences"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Sentence",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/sentences/:id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"sentences",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "NTOluTUzh2xXt9ysSKSn"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Sentences",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/sentences?order=asc&offset=0&limit=100",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"sentences"
-					],
-					"query": [
-						{
-							"key": "order",
-							"value": "asc"
+			"item": [
+				{
+					"name": "Translate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"const sind offen, kommunikationsstark und teamorientiert.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "offset",
-							"value": "0"
-						},
-						{
-							"key": "limit",
-							"value": "100"
+						"url": {
+							"raw": "{{host}}/api/translations",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"translations"
+							]
 						}
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Sentence",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/sentences/:id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"sentences",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "NTOluTUzh2xXt9ysSKSn"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Sentence",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"text\": \"Dies ist ein Test\",\n    \"cats\": [\"soft\"]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/sentences/:id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"sentences",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "NTOluTUzh2xXt9ysSKSn"
-						}
-					]
-				}
-			},
-			"response": []
+			]
 		}
 	]
 }
